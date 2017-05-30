@@ -76,13 +76,19 @@
         </section>
         <section>
           <h1>Objetivo</h1>
-          <p>Crear un agente que pueda aprender a jugar el videojuego Pong a partir de la secuencia de matrices de pixeles que         constituyen el juego. Para lograr esto, se propone el uso de una red neuronal utilizando el método clásicos de optimización         descenso de gradiente. La entrada de la red sería la matriz de pixeles y la salida es un elemento del espacio de acciones que el agente puede tomar.</p>
+          <p>Crear un agente que pueda aprender a jugar el videojuego Pong a partir de la secuencia de matrices de pixeles que         constituyen el juego. Para lograr esto, se hará uso de una red neuronal utilizando el método clásicos de optimización         descenso de gradiente. La entrada de la red sería la matriz de pixeles y la salida es un elemento del espacio de acciones que el agente puede tomar.</p>
         </section>
-
+        <section>
+            <h2>Andrej Karpathy</h2>
+            <img src="./images/andrej.jpg"/>
+        </section>
         <section>
             <img src="./images/diagram.png"/>
         </section>
-
+        <section>
+            <h3>Arcade Learning Environment</h3>
+            <img src="./images/ale.jpg"/>
+        </section>
         <section>
             \[ 
                 \begin{align}
@@ -95,7 +101,9 @@
         <section>
           <img src="./images/turing.jpg"/>
         </section>
-
+        <section>
+          <img src="./images/gradient_descent_line_graph.gif"/>
+        </section>
 
         <section>
             \[ 
@@ -124,16 +132,20 @@
 	    <p> Policy forward
 	    </p>
 	    <pre><code class=“c++” data-trim contenteditable>
-double policy_forward(std::vector<double> x, std::vector<double> w1, std::vector<double> w2, std::vector<double> &hiddenStates){
+double policy_forward(std::vector<double> x, 
+                      std::vector<double> w1, 
+                      std::vector<double> w2, 
+                      std::vector<double> &hiddenStates){
     double prob;
     std::vector<double> h= matrixMatrixMultiplication(w1.data(), x.data(), H, D, 1);
     int size = h.size();
     relu(h);
 
     hiddenStates.reserve(hiddenStates.size() + h.size());
+
     hiddenStates.insert(hiddenStates.end(), h.begin(), h.end());
-    std::vector<double> logp= matrixMatrixMultiplication(w2.data(), h.data(), 1, H, 1);
-    prob = sigmoid(logp[0]);
+    std::vector<double> g= matrixMatrixMultiplication(w2.data(), h.data(), 1, H, 1);
+    prob = sigmoid(g[0]);
     return prob;
 }
          </code>
@@ -169,9 +181,7 @@ __global__ void gaxpymm(double *y, double *a, double *b, int m, int n, int p){
          </pre>
 	</section>
 
-        <section>
-          <img src="./images/gradient_descent_line_graph.gif"/>
-        </section>
+
 
         <section>
             \[ \begin{align}
