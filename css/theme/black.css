@@ -5,28 +5,28 @@
  */
 @import url(../../lib/font/source-sans-pro/source-sans-pro.css);
 section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
-  color: #222; }
+  color: #fff; }
 
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #222;
-  background-color: #222; }
+  background: #fff;
+  background-color: #fff; }
 
 .reveal {
   font-family: "Source Sans Pro", Helvetica, sans-serif;
   font-size: 42px;
   font-weight: normal;
-  color: #fff; }
+  color: #0C090D; }
 
 ::selection {
-  color: #fff;
+  color: #0C090D;
   background: #bee4fd;
   text-shadow: none; }
 
 ::-moz-selection {
-  color: #fff;
+  color: #0C090D;
   background: #bee4fd;
   text-shadow: none; }
 
@@ -45,7 +45,7 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #fff;
+  color: #0C090D;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
   font-weight: 600;
   line-height: 1.2;
@@ -222,7 +222,7 @@ body {
   border: none; }
 
 .reveal .roll span:after {
-  color: #fff;
+  color: #0C090D;
   background: #068de9; }
 
 /*********************************************
@@ -231,7 +231,7 @@ body {
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #fff;
+  border: 4px solid #0C090D;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
 
 .reveal section img.plain {
